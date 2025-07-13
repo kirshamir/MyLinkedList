@@ -50,19 +50,6 @@ public class MyLinkedList<T> implements Iterable<T> {
     }
 
     /**
-     * Moves all items from this list to the end of another MyLinkedList of a compatible type.
-     * After the operation, this list will be empty.
-     */
-    public void moveItemsTo(MyLinkedList<? super T> target) {
-        for (T item : this) {
-            target.add(item);
-        }
-        this.head = null;
-        this.tail = null;
-        this.size = 0;
-    }
-
-    /**
      * Prints all items in the list, one per line.
      */
     public void print() {
