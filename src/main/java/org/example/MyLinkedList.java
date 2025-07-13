@@ -27,15 +27,6 @@ public class MyLinkedList<T> implements Iterable<T> {
         size++;
     }
 
-    /**
-     * Adds all elements from the given Iterable to this list.
-     */
-    public void add(Iterable<? extends T> items) {
-        for (T item : items) {
-            add(item);
-        }
-    }
-
     public T get(int index) {
         if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
         Node<T> current = head;

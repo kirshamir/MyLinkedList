@@ -20,20 +20,12 @@ public class Main {
             System.out.println(item);
         }
 
-        // Test add(Iterable)
-        java.util.List<String> moreFruits = java.util.Arrays.asList("Fig", "Grape");
-        list2.add(moreFruits);
-        System.out.println("List2 after adding more fruits:");
-        for (String item : list2) {
-            System.out.println(item);
-        }
-
         // Demonstrate print()
-        System.out.println("objectList using print():");
+        System.out.println("List2 using print():");
         list2.print();
 
         // Demonstrate apply() with a lambda
-        System.out.println("objectList with apply() (uppercase if String):");
+        System.out.println("List2 with apply() (uppercase if String):");
         list2.apply(System.out::println);
     }
 }
