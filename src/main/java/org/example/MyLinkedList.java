@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
-public class MyLinkedList<T> implements Iterable<T> {
+public class MyLinkedList<T> {
     private static class Node<T> {
         T data;
         Node<T> next;
@@ -44,8 +41,10 @@ public class MyLinkedList<T> implements Iterable<T> {
      * Prints all items in the list, one per line.
      */
     public void print() {
-        for (T item : this) {
-            System.out.println(item);
+        Node<T> current = head;
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
         }
     }
 
@@ -54,26 +53,10 @@ public class MyLinkedList<T> implements Iterable<T> {
      * @param action a function to apply to each item
      */
     public void apply(java.util.function.Consumer<? super T> action) {
-        for (T item : this) {
-            action.accept(item);
+        Node<T> current = head;
+        while (current != null) {
+            action.accept(current.data);
+            current = current.next;
         }
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return new Iterator<T>() {
-            private Node<T> current = head;
-            @Override
-            public boolean hasNext() {
-                return current != null;
-            }
-            @Override
-            public T next() {
-                if (!hasNext()) throw new NoSuchElementException();
-                T data = current.data;
-                current = current.next;
-                return data;
-            }
-        };
     }
 }

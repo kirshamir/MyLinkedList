@@ -12,12 +12,12 @@ public class Main {
         list2.add("Elderberry");
 
         System.out.println("List1:");
-        for (String item : list1) {
-            System.out.println(item);
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println(list1.get(i));
         }
         System.out.println("List2:");
-        for (String item : list2) {
-            System.out.println(item);
+        for (int i = 0; i < list2.size(); i++) {
+            System.out.println(list2.get(i));
         }
 
         // Demonstrate print()
