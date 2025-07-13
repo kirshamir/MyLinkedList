@@ -62,6 +62,25 @@ public class MyLinkedList<T> implements Iterable<T> {
         this.size = 0;
     }
 
+    /**
+     * Prints all items in the list, one per line.
+     */
+    public void print() {
+        for (T item : this) {
+            System.out.println(item);
+        }
+    }
+
+    /**
+     * Applies the given lambda to all items in the list.
+     * @param action a function to apply to each item
+     */
+    public void apply(java.util.function.Consumer<? super T> action) {
+        for (T item : this) {
+            action.accept(item);
+        }
+    }
+
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {

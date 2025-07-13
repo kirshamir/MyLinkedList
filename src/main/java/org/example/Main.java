@@ -48,6 +48,20 @@ public class Main {
             System.out.println(item);
         }
 
+        // Demonstrate print()
+        System.out.println("objectList using print():");
+        objectList.print();
+
+        // Demonstrate apply() with a lambda
+        System.out.println("objectList with apply() (uppercase if String):");
+        objectList.apply(item -> {
+            if (item instanceof String) {
+                System.out.println(((String) item).toUpperCase());
+            } else {
+                System.out.println(item);
+            }
+        });
+
         // Example with Integer and Number
         MyLinkedList<Integer> intList = new MyLinkedList<>();
         intList.add(1);
